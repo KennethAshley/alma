@@ -1,0 +1,26 @@
+h1 Listing Employees
+
+.right
+  = search_form_for @q, url: cardboard_employees_path do |f| 
+    = cardboard_filters @employees.columns.map{|x|[x.name, x.type]}, f
+    = f.submit 
+
+div style="float:left"
+  table class="table table-striped"
+    tr
+      - for field in @employees.columns
+        th= sort_link @q, field.name
+      th
+      th
+
+    - @employees.each do |employee|
+      tr
+        - for field in employee.attributes.keys
+          td = employee.attributes[field]
+
+        td = link_to 'Edit', edit_cardboard_employee_path(employee)
+        td = link_to 'Destroy', cardboard_employee_path(employee), :confirm => 'Are you sure?', :method => :delete
+
+  br
+
+  = link_to 'New Employee', new_cardboard_employee_path, class: "btn btn-primary"

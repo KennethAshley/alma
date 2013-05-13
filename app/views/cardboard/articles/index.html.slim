@@ -1,0 +1,26 @@
+h1 Listing Articles
+
+.right
+  = search_form_for @q, url: cardboard_articles_path do |f| 
+    = cardboard_filters @articles.columns.map{|x|[x.name, x.type]}, f
+    = f.submit 
+
+div style="float:left"
+  table class="table table-striped"
+    tr
+      - for field in @articles.columns
+        th= sort_link @q, field.name
+      th
+      th
+
+    - @articles.each do |article|
+      tr
+        - for field in article.attributes.keys
+          td = article.attributes[field]
+
+        td = link_to 'Edit', edit_cardboard_article_path(article)
+        td = link_to 'Destroy', cardboard_article_path(article), :confirm => 'Are you sure?', :method => :delete
+
+  br
+
+  = link_to 'New Article', new_cardboard_article_path, class: "btn btn-primary"

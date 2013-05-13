@@ -1,0 +1,8 @@
+.jumpdiv
+.load-div
+  .row-fluid
+    .span3
+      h1 = @employee.name
+      = image_tag @employee.image.url
+    .span9
+      p = raw @employee.body

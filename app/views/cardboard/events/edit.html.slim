@@ -1,0 +1,6 @@
+h1 Editing event
+
+= simple_form_for @event, url: cardboard_event_path(@event) do |f|
+  == render 'fields', f: f
+
+= link_to 'Back', cardboard_events_path

@@ -1,0 +1,6 @@
+h1 New Article
+
+= simple_form_for @article, url: cardboard_articles_path do |f|
+  == render 'fields', f: f
+
+= link_to 'Back', cardboard_articles_path

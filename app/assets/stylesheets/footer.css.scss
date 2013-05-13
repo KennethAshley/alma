@@ -1,0 +1,102 @@
+footer {
+  width: 447px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding-bottom: 40px;
+  .social {
+    float: left; 
+    width: 40px;
+    border-right: 2px solid $light-grey;
+    ul{
+      list-style-type: none;
+      margin-left: 0px;
+      li {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        background: $blue;
+        text-align: center;
+        position: relative;
+        -webkit-transition: all 100ms linear;
+        -moz-transition: all 100ms linear;
+        -ms-transition: all 100ms linear;
+        -o-transition: all 100ms linear;
+        transition: all 100ms linear;
+        &:hover {
+          top: -5px;
+          cursor: pointer;
+        }
+        i {
+          font-size: 1.2em;
+          line-height: 25px;
+        }
+      }
+    } 
+  }
+  .subscribe {
+    float: right;
+    border-left: 1px solid white;
+    padding-left: 30px;
+      div {
+        margin-top: -10px;
+      }
+      h4 {
+        display: inline;
+        span {
+          font-size: 1.5em;
+        }
+      } 
+      p {
+        margin-bottom: 20px;
+          a {
+            font-style: italic;
+            color: #333333;
+            &:hover {
+              color: #005580;
+              cursor: pointer;
+            }
+          }
+      }
+        .subscribe-input {
+    position: relative;
+    left: -20px;
+    i {
+      position: relative;
+      left: 35px;
+      top: -3px;
+      font-size: 20px;
+      color: #c0c0c0;
+    }
+    input {
+      padding-left: 40px;
+      height: 40px;
+      font-family: $font-crimson;
+      font-style: italic;
+      font-size: 18px;
+    }
+    button {
+      line-height: 45px;
+      width: 100px;
+      position: relative;
+      top: -7px;
+      left: 10px;
+      background: $orange ;
+      box-shadow: 0px 4px 0px #c7430e;
+      &:hover {
+        background: #db521c;
+      }
+      &:active {
+      box-shadow: 0px 1px 0px #c7430e;
+      position: relative;
+      top: -6px;
+      }
+    }
+  }
+  }
+  .copyright {
+    clear: both;
+    text-align: center;
+  }
+}

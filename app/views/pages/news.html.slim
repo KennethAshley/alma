@@ -1,0 +1,33 @@
+- @articles = Article.not_featured.limit(4)
+- @featured = Article.featured.limit(1).first
+
+.jumpdiv
+= image_tag current_page.get('news').attr('image').url
+.load-div
+  h1 News
+  p.statement = current_page.get('news').attr('statement')
+  .arrows
+    .arrow_box
+    .arrow_box_outline
+  - if @featured.present?
+    h1 Featured News
+    h3 = @featured.title
+  .arrows
+    .arrow_box
+    .arrow_box_outline
+  h1 Recent News
+  .row-fluid
+    .recent-news
+      - if @articles.present?
+        - for article in @articles
+          .news.span6
+            h3 = article.title
+            p = article.body
+            p.news-info
+              = article.date 
+              |  | 
+              = link_to 'Read More', article
+      .clearfix
+  .arrows
+    .arrow_box
+    .arrow_box_outline

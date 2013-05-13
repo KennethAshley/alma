@@ -1,0 +1,26 @@
+h1 Listing Events
+
+.right
+  = search_form_for @q, url: cardboard_events_path do |f| 
+    = cardboard_filters @events.columns.map{|x|[x.name, x.type]}, f
+    = f.submit 
+
+div style="float:left"
+  table class="table table-striped"
+    tr
+      - for field in @events.columns
+        th= sort_link @q, field.name
+      th
+      th
+
+    - @events.each do |event|
+      tr
+        - for field in event.attributes.keys
+          td = event.attributes[field]
+
+        td = link_to 'Edit', edit_cardboard_event_path(event)
+        td = link_to 'Destroy', cardboard_event_path(event), :confirm => 'Are you sure?', :method => :delete
+
+  br
+
+  = link_to 'New Event', new_cardboard_event_path, class: "btn btn-primary"

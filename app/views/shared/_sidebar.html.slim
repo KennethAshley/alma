@@ -1,0 +1,85 @@
+- @events = Event.all
+- @articles = Article.all
+
+.main-menu.visible-tablet.visible-desktop
+  ul
+    li 
+      a data-nav="about" About Alma
+    li 
+      a data-nav="scorecards" Scorecards
+    li 
+      a data-nav="news" News
+    li
+      a data-nav="events" Events
+    li
+      a data-nav="reference-materials" Reference Materials
+    li 
+      a href="/contact" Contact
+    / = nested_pages do |page, subpages|
+    /   li
+    /     = link_to(page.title, page.url, :data => {:nav => page.slug}) if page.in_menu?
+.bottom-nav 
+.sub-menu.visible-tablet.visible-desktop
+  ul data-nav="about"
+    li 
+      = link_to("What is ALMA?", '/about')
+    li 
+      = link_to("Initiatives", '/about#initiatives') 
+    li 
+      = link_to("Team", '/about#team') 
+    li 
+      = link_to("Jobs", '/about#jobs') 
+  ul data-nav="scorecards"
+    li 
+      a Scorecards
+    li 
+      a Scorecards
+    li 
+      a Scorecards
+    li 
+      a Scorecards
+    li
+      a Scorecards
+    li 
+      a Scorecards
+  ul data-nav="news"
+    li 
+      = link_to("Recent News Home", '/news')
+    - if @articles.present?
+      - for article in @articles
+        li
+          = link_to article do
+            = article.title
+  ul data-nav="events"
+    - if @events.present?
+      - for event in @events 
+        li
+          =link_to event_path(event) do 
+            |
+            = event.title 
+  ul data-nav="reference-materials"
+      li 
+        a Reference Materials
+      li 
+        a Reference Materials
+      li 
+        a Reference Materials
+      li 
+        a Reference Materials
+      li
+        a Reference Materials
+      li 
+        a Reference Materials
+  ul data-nav="contact"
+    li 
+      a contact
+    li 
+      a contact
+    li 
+      a contact
+    li 
+      a contact
+    li
+      a contact
+    li 
+      a contact

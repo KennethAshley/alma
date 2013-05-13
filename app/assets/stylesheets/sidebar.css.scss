@@ -1,0 +1,114 @@
+
+.main-menu {
+	float: left;
+	position: fixed;
+	top: 120px;
+	bottom: 0px;
+	left: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	width: 100px;
+	height: 100%;
+	ul {
+		list-style-type: none;
+		margin-left: 0;
+		width: 100px;
+		margin-bottom: 130px;
+		li {
+			text-align: center;
+			a {
+				background: #141414;
+				padding: 30px 10px;
+				color: white;
+				display: block;
+				width: 80px;
+				font-family: "Helvetica Neue", "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, "Lucida Grande", sans-serif; 
+				font-weight: 600;
+				font-size: .8em;
+				letter-spacing: 0.1em;
+				text-shadow: black;
+				text-shadow: 1px 1px 2px rgba(0,0,0,.8);
+				text-shadow: 1px 1px 2px rgba(0,0,0,.8);
+				border-bottom: 1px solid black;
+				}
+				&:nth-of-type(1) a:hover{
+					background-image: image-url('about_hover.png');
+				}
+				&:nth-of-type(2) a:hover{
+					background-image: image-url('scorecards_hover.png');
+				}
+				&:nth-of-type(3) a:hover{
+					background-image: image-url('news_hover.png');
+				}
+				&:nth-of-type(4) a:hover{
+					background-image: image-url('events_hover.png');
+				}
+				&:nth-of-type(5) a:hover{
+					background-image: image-url('referencematerials_hover.png');
+				}
+				&:nth-of-type(6) a:hover{
+					background-image: image-url('contact_hover.png');
+				}
+			}
+		}
+	}
+
+	.bottom-nav {
+		display: block;
+		width: 100px;
+		background: #141414;
+		position: fixed;
+		bottom: 0;
+		height: 900px;
+		z-index: -1;
+	}
+
+.sub-menu {
+	float: left;
+	position: fixed;
+	top: 120px;
+	left: 100px;
+	width: 200px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	height: 100%;
+	bottom: 0px;
+	ul {
+		margin-left: 0px;
+		width: 200px;
+		margin-bottom: 200px;
+		li {
+			padding: 20px 20px;
+			list-style-type: none;
+			margin-left: 0;
+			border-bottom: 1px dotted black;
+			&:hover {
+				background: #ccc;
+			}
+			a {
+				color: #858585;
+				font-family: 'Crimson Text', serif;
+				font-size: 20px;
+				font-style:italic;
+				&:hover {
+					color: black;
+				}
+			}
+		}
+	}
+}
+
+.sub-menu-closed { 
+	display: none;
+}
+
+@media (min-width: 768px) and (max-width: 940px) { // ipad
+	.main-menu {
+		position: fixed;
+	}
+}
+@media (max-width: 979px) { // ipad
+	.sub-menu {
+		top: 130px;
+	}
+}

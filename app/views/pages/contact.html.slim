@@ -1,0 +1,23 @@
+.jumpdiv
+.load-div.contact
+  h1 Contact
+  p.statement = current_page.get('contact').attr('statement')
+  .row-fluid
+    form.form-horizontal.span7
+      .control-group
+        .controls
+          input#inputEmail.input-xxlarge placeholder="first name" type="text"
+      .control-group
+        .controls
+          input#inputPassword.input-xxlarge placeholder="last name" type="text"
+      .control-group
+        .controls
+          input#inputPassword.input-xxlarge placeholder="subject" type="text"
+      .control-group
+        .controls
+          textarea.input-xxlarge placeholder="message" type="message"
+      button Submit
+    .span4
+      h3 Contact Information
+      = raw current_page.get('contact').attr('contact_info')
+

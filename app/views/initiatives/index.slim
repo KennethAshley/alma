@@ -1,0 +1,5 @@
+ul
+  = nested_pages do |page, subpages|
+    li
+      = link_to(page.title, page.url) if page.in_menu?
+      ul= subpages

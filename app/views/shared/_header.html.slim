@@ -1,0 +1,27 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner.alma-nav
+    h1 
+      = link_to image_tag('almalogo.png'), '/'
+    .search
+      i.icon-search
+      input.span2 type="'text" placeholder="search here..."
+      button.ipad-view
+        i.icon-tablet
+        p iPAD
+  .container.responsive-nav.visible-phone
+    .wrapper
+      button.btn.btn-navbar  type="button"data-toggle="collapse" data-target=".nav-hide"
+        i.icon-angle-down
+      p main navigation
+    span 
+      i.icon-search    
+      input type="text" placeholder="search"
+    .nav-hide.collapse.phone-nav
+      ul
+        li
+          a home
+        li 
+          a about
+        li 
+          a contact
+

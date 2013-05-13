@@ -1,0 +1,26 @@
+h1 Listing Initiatives
+
+.right
+  = search_form_for @q, url: cardboard_initiatives_path do |f| 
+    = cardboard_filters @initiatives.columns.map{|x|[x.name, x.type]}, f
+    = f.submit 
+
+div style="float:left"
+  table class="table table-striped"
+    tr
+      - for field in @initiatives.columns
+        th= sort_link @q, field.name
+      th
+      th
+
+    - @initiatives.each do |initiative|
+      tr
+        - for field in initiative.attributes.keys
+          td = initiative.attributes[field]
+
+        td = link_to 'Edit', edit_cardboard_initiative_path(initiative)
+        td = link_to 'Destroy', cardboard_initiative_path(initiative), :confirm => 'Are you sure?', :method => :delete
+
+  br
+
+  = link_to 'New Initiative', new_cardboard_initiative_path, class: "btn btn-primary"

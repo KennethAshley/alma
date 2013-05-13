@@ -1,0 +1,240 @@
+
+html, body {
+  height: 100% !important;
+  overflow: hidden;
+}
+
+// * {
+//   -webkit-border-radius: 0 !important;
+//      -moz-border-radius: 0 !important;
+//           border-radius: 0 !important;
+// }
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+/* ============ Global ============ */
+
+.active {
+  webkit-transition: all 100ms ease-in-out;
+  -moz-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+  left: 200px;
+}
+
+.padding {
+  padding: 15px;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+hr {
+  border: 1px solid $light-grey;
+}
+
+  .statement {
+    font-family: $font-crimson;
+    font-style: italic;
+    font-size: 1.5em;
+    color: $grey;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    line-height: 25px;
+  }
+
+  .share {
+    width: 40px;
+    background: #d7d7d7;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px 0px 5px 0px;
+    border-bottom: 2px solid white;
+    -moz-box-shadow: inset 0 1px 4px #000000;
+    -webkit-box-shadow: inset 0 1px 4px #000000;
+    box-shadow: inset 0 1px 4px #000000;
+    -moz-box-shadow: inset 0 1px 4px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 1px 4px rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.3);
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    height: 95px;
+    i {
+      margin: 10px 0px 10px 0px;
+      display: block;
+      color: $grey;
+
+      -webkit-transition: font-size 100ms linear;
+      -moz-transition: font-size 100ms linear;
+      -ms-transition: font-size 100ms linear;
+      -o-transition: font-size 100ms linear;
+      transition: font-size 100ms linear;
+      &:hover {
+        font-size: 1.5em;
+        
+      }
+    }
+  }
+
+  .share.stuck {
+    display: none;
+  }
+/* ============ FONTS ============ */
+body {
+    font-family: $font-helvectica; 
+}
+h1 {
+  color: $blue;
+  font-size: 46pt;
+  text-transform: uppercase;
+  font-family: $font-league;
+  font-weight: normal;
+  line-height: 50px;
+}
+
+h2 {
+  color: $blue;
+  font-size: 40pt;
+  text-transform: uppercase;
+  font-family: $font-league;
+  font-weight: normal;
+  }
+
+  h3 {
+    font-family: $font-league;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: $red;
+    font-weight: normal;
+    line-height: 0px;
+    margin: 20px 0px
+  }
+
+a {
+  font-family: $font-helvectica;
+  font-weight: 300;
+  font-size: 14px;
+  color: #6ca4c7;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+/* ============ BUTTONS ============ */
+
+button {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-family: $font-league;
+  text-shadow: -1px 0px 4px $grey;
+  text-shadow: -1px 0px 4px rgba(0,0,0,0.5);
+  color: white;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 3px;
+}
+
+/* ============ LISTS ============ */
+
+ul {
+  list-style-type: none;
+
+}
+
+/* ============ INPUTS ============ */
+
+input {
+  font-family: $font-crimson;
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* ============ INPUTS ============ */
+
+i {
+  color: white;
+  font-size: 1.2em;
+}
+
+/* ============= ARROWS ============== */
+.arrows {
+  position: relative;
+      margin: 40px 0px 40px 0px;
+
+}
+
+
+.arrow_box {
+  position: relative;
+  background: #f1f1f1;
+  border-bottom: 5px solid #d8d8d8;
+  z-index: 1;
+}
+.arrow_box:after, .arrow_box:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.arrow_box:after {
+  border-color: rgba(241, 241, 241, 0);
+  border-top-color: #f1f1f1;
+  border-width: 15px;
+  left: 50%;
+  margin-left: -15px;
+}
+.arrow_box:before {
+  border-color: #d8d8d8;
+  border-color: rgba(216, 216, 216, 0);
+  border-top-color: $light-grey;
+  border-width: 22px;
+  left: 50%;
+  margin-left: -22px;
+}
+
+.arrow_box_outline {
+  position: relative;
+  background: #f1f1f1;
+  border-bottom: 1px solid #ffffff;
+}
+.arrow_box_outline:after, .arrow_box_outline:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.arrow_box_outline:after {
+  border-color: rgba(241, 241, 241, 0);
+  border-top-color: #f1f1f1;
+  border-width: 15px;
+  left: 50%;
+  margin-left: -15px;
+}
+.arrow_box_outline:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #ffffff;
+  border-width: 16px;
+  left: 50%;
+  margin-left: -16px;
+}

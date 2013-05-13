@@ -1,0 +1,52 @@
+- @initiatives = Initiative.all
+- @employees = Employee.all
+.jumpdiv
+.load-div.about
+  h2 = current_page.get('about').attr('title')
+  p.statement = current_page.get('about').attr('statement')
+  = current_page.get('about').attr('content')
+  .arrows
+    .arrow_box
+    .arrow_box_outline
+  h2#initiatives.jumptarget Initiatives
+  .row-fluid
+    - if @initiatives.present?
+      - for initiative in @initiatives 
+        .single-module
+          .span3
+            = image_tag initiative.image.url if initiative.image_uid
+          .span9
+            h3 = initiative.title
+            p = initiative.summary
+            = link_to 'Read More', initiative_path(initiative)
+          .clearfix
+          hr /
+  .arrows
+    .arrow_box
+    .arrow_box_outline  
+  h2#team.jumptarget Teams
+  p.statement = current_page.get('teams').attr('statement')
+  .teams
+    - if @employees.present?
+      - for employee in @employees 
+        .team-member
+          .team-member-info
+            = image_tag employee.image.url if employee.image_uid
+            = link_to employee_path(employee) do 
+              | Read More
+              | &nbsp;&nbsp;
+              i.icon-caret-right
+          p 
+            b = employee.name
+            br /
+            = employee.position
+  .clearfix
+  .arrows
+    .arrow_box
+    .arrow_box_outline  
+  h2#jobs.jumptarget Jobs
+  - current_page.get('jobs').each do |job| 
+    div
+      p.statement = job.attr('statement')
+      p = job.attr('content')
+      hr /

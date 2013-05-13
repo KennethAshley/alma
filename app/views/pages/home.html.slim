@@ -1,0 +1,22 @@
+.jumpdiv
+ul.bxslider
+  - current_page.get('slideshow').each do |slide| 
+    li
+      .cta-content
+        h2 = slide.attr('title')
+        p = slide.attr('description')
+        .cta-button
+          button = slide.attr('button')
+      = image_tag slide.attr('image').url
+.load-div  
+  .row-fluid
+    .span6.mission-statement
+      h2 = current_page.get('mission_statement').attr('title')
+      p = current_page.get('mission_statement').attr('text')
+    .span6.recent-tweets
+      h2 
+        i.icon-twitter 
+        = current_page.get('recent_tweets').attr('title')
+      div.twitter-handle data-url='#{current_page.get('recent_tweets').attr('handle')}'
+      ul.twitter-feed
+

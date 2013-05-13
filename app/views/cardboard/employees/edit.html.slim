@@ -1,0 +1,6 @@
+h1 Editing employee
+
+= simple_form_for @employee, url: cardboard_employee_path(@employee) do |f|
+  == render 'fields', f: f
+
+= link_to 'Back', cardboard_employees_path
